@@ -18,8 +18,8 @@ def field_validate(doc:dict):
     for field in valid_fields:
         if field not in doc:
             return jsonify({
-                "description": "Valid fields: name, email, phone",
-                "message": f"Missing field '{field}'"
+                "description": "please fill the any of the field values",
+                "message": "you gave empty value"
             }), 400
     
     return None
@@ -42,8 +42,8 @@ def update_field_validate(doc:dict):
     for v in doc.values():
         if not v:
             return jsonify({
-                "description": "Valid fields: name, email, phone",
-                "message": "Every field is mandatory"
+                "description": "please fill the any of the field values",
+                "message": "you gave empty value"
             }), 400
     
     return None
